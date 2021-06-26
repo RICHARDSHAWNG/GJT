@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <title>消息列表 </title>
+    <link rel="stylesheet" href="./WeUI_files/weui.css" />
+    <link rel="stylesheet" href="./WeUI_files/example.css" />
+    <style>
+        .badge {
+            position: relative;
+            margin-right: 10px;
+        }
+        
+        .badge img {
+            width: 50px;
+            display: block;
+        }
+        
+        .badge span {
+            position: absolute;
+            top: -0.4em;
+            right: -0.4em;
+        }
+        
+        .profile_photo {
+            position: relative;
+            margin-right: 10px;
+        }
+        
+        .profile_photo img {
+            width: 50px;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="weui-tab">
+            <div class="weui-tab__panel">
+                <div class="weui-cells">
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd badge">
+                            <img src="./images/_demo/胡歌1.jpg">
+                            <span class="weui-badge">8</span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>胡歌</p>
+                            <p style="font-size: 13px; color: #888;">晚上帮我带个煎饼果子</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">下午 5:43</div>
+                            <div class="weui-media-box__desc"><img src="./images/icon/icon_noDisturb.png" style="width: 16px;"></div>
+
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd profile_photo">
+                            <img src="./images/_demo/chengguo.jpg">
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>成果</p>
+                            <p style="font-size: 13px; color: #888;">你晚上几点回来?</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">下午 5:20</div>
+                            <div class="weui-media-box__desc"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd profile_photo">
+                            <img src="./images/_demo/张艺兴1.jpg">
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>张艺兴</p>
+                            <p style="font-size: 13px; color: #888;">天哥，你在干嘛呢</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">下午 5:17</div>
+                            <div class="weui-media-box__desc"><img src="./images/icon/icon_noDisturb.png" style="width: 16px;"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd badge">
+                            <img src="./images/_demo/俞文波.jpg">
+                            <span class="weui-badge">15</span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>阿水</p>
+                            <p style="font-size: 13px; color: #888;">4=1，上号！</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">下午 4:55</div>
+                            <div class="weui-media-box__desc"><img src="./images/icon/icon_noDisturb.png" style="width: 16px;"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd badge">
+                            <img src="./images/_demo/李沁1.jpg">
+
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>李沁</p>
+                            <p style="font-size: 13px; color: #888;">[视频通话]</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">下午 2:30</div>
+                            <div class="weui-media-box__desc"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd badge">
+                            <img src="./images/_demo/邓紫棋1.jpg">
+                            <span class="weui-badge">2</span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>紫棋姐</p>
+                            <p style="font-size: 13px; color: #888;">阿天，你回头听听这段flow</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">上午 12:43</div>
+                            <div class="weui-media-box__desc"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd badge">
+                            <span class="weui-badge">1</span>
+                            <img src="./images/_demo/易烊千玺1.jpg">
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>千玺</p>
+                            <p style="font-size: 13px; color: #888;">[小程序]快帮我砍价！还可获得10元现...</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">上午 11:43</div>
+                            <div class="weui-media-box__desc"><img src="./images/icon/icon_noDisturb.png" style="width: 16px;"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd profile_photo">
+                            <img src="./images/_demo/王一博1.jpg">
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>一博</p>
+                            <p style="font-size: 13px; color: #888;">晚安哈</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">昨天</div>
+                            <div class="weui-media-box__desc"><img src="./images/icon/icon_noDisturb.png" style="width: 16px;"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd badge">
+                            <img src="./images/_demo/荷花1.jpg">
+
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>老妈</p>
+                            <p style="font-size: 13px; color: #888;">[语音]</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">昨天</div>
+                            <div class="weui-media-box__desc"></div>
+                        </div>
+                    </div>
+                    <div class="weui-cell weui-cell_active">
+                        <div class="weui-cell__hd badge">
+                            <img src="./images/_demo/TP.png">
+                            <span class="weui-badge">8</span>
+                        </div>
+                        <div class="weui-cell__bd">
+                            <p>腾讯游戏安全中心</p>
+                            <p style="font-size: 13px; color: #888;">5大外挂飞机团被判赔额300万元！</p>
+                        </div>
+                        <div class="weui-cell__ft">
+                            <div class="weui-media-box__desc">10月16日</div>
+                            <div class="weui-media-box__desc"><img src="./images/icon/icon_noDisturb.png" style="width: 16px;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="weui-tabbar">
+                <div class="weui-tabbar__item weui-bar__item_on">
+                    <a href="./index.html">
+                        <div style="display: inline-block; position: relative;">
+                            <img src="./images/_demo/icon_message_active.png" alt="" class="weui-tabbar__icon">
+                            <span class="weui-badge" style="position: absolute; top: -2px; right: -13px;">34</span>
+                        </div>
+                        <p class="weui-tabbar__label">微信</p>
+                    </a>
+                </div>
+                <div class="weui-tabbar__item">
+                    <a href="./index1.html">
+                        <img src="./images/_demo/icon_contactbook.png" alt="" class="weui-tabbar__icon">
+                        <p class="weui-tabbar__label">通讯录</p>
+                    </a>
+                </div>
+                <div class="weui-tabbar__item">
+                    <a href="./index2.html">
+                        <div style="display: inline-block; position: relative;">
+                            <img src="./images/_demo/icon_discover.png" alt="" class="weui-tabbar__icon">
+                            <span class="weui-badge weui-badge_dot" style="position: absolute; top: 0; right: -6px;"></span>
+                        </div>
+                        <p class="weui-tabbar__label">发现</p>
+                    </a>
+                </div>
+                <div class="weui-tabbar__item">
+                    <a href="./index3.html">
+                        <img src="./images/_demo/icon_me.png" alt="" class="weui-tabbar__icon">
+                        <p class="weui-tabbar__label">我</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
