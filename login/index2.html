@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+
+    <title>手机号短信验证登录 - 锦天版</title>
+    <link rel="stylesheet" type="text/css" href="./WeUI_files/weui.css" />
+    <link rel="stylesheet" type="text/css" href="../../../WeUI_files/example.css" />
+    <script src="./WeUI_files/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./WeUI_files//weui.min.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="weui-form">
+            <div class="weui-form__text-area">
+                <h2 class="weui-form__title">登录</h2>
+                <div class="weui-form__desc">手机短信验证</div>
+            </div>
+            <div class="weui-form__control-area">
+                <div class="weui-cells__group weui-cells__group_form">
+                    <div class="weui-cells weui-cells_form">
+                        <div class="weui-cell weui-cell_active">
+                            <div class="weui-cell__hd"><label class="weui-label">手机号</label></div>
+                            <div class="weui-cell__bd">
+                                <input class="weui-input" type="number" placeholder="请输入手机号" id="phone_number" />
+                            </div>
+                        </div>
+                        <div class="weui-cell weui-cell_active weui-cell_vcode">
+                            <div class="weui-cell__hd"><label class="weui-label">验证码</label></div>
+                            <div class="weui-cell__bd">
+                                <input autofocus class="weui-input" type="text" pattern="[0-9]*" id="verification_code" placeholder="输入验证码" maxlength="6" />
+                            </div>
+                            <div class="weui-cell__ft">
+                                <button class="weui-btn weui-btn_default weui-vcode-btn">获取验证码</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="weui-cells__tips"><a class="weui-link" href="javascript:" id="show_dialog_msgcode">收不到验证码</a></div>
+                </div>
+            </div>
+            <div class="weui-form__opr-area">
+                <a class="weui-btn weui-btn_primary" href="javascript:" id="btn_login">登录</a>
+            </div>
+        </div>
+        <div id="dialog_msgcode">
+            <div class="js_dialog" id="dialog" style="display: none;">
+                <div class="weui-mask"></div>
+                <div class="weui-dialog weui-skin_android">
+                    <div class="weui-dialog__hd">
+                        请检查您的手机号是否输入正确
+                    </div>
+                    <div class="weui-dialog__ft">
+                        <a href="javascript:" class="weui-dialog__btn weui-dialog__btn_primary">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            var $dialog = $('#dialog');
+            // 收不到验证码,弹出提示框
+            $('#show_dialog_msgcode').on('click', function() {
+                $dialog.fadeIn(200);
+            });
+            // 关闭提示框
+            $('#dialog_msgcode').on('click', '.weui-mask', function() {
+                $(this).parents('.js_dialog').fadeOut(200);
+            });
+            $('#dialog_msgcode').on('click', '.weui-dialog__btn', function() {
+                $(this).parents('.js_dialog').fadeOut(200);
+            });
+            // 获取验证码的倒计时显示
+            var timer = null;
+            var count = 60;
+            $('.weui-vcode-btn').on('click', function() {
+                    if (!timer) {
+                        count--;
+                        $(this).css('color', 'var(--weui-BTN-DISABLED-FONT-COLOR)');
+                        $('.weui-vcode-btn').text(count + '秒后...');
+                        timer = setInterval(function() {
+                            if (count > 1) {
+                                count--;
+                                $('.weui-vcode-btn').text(count + '秒后...');
+                            } else {
+                                clearInterval(timer);
+                                timer = null;
+                                count = 60;
+                                $('.weui-vcode-btn').css('color', 'var(--weui-BTN-DEFAULT-COLOR)');
+                                $('.weui-vcode-btn').text('获取验证码');
+                            };
+                        }, 1000);
+                    };
+                })
+                // 必填项的错误提示
+            $('#btn_login').on('click', function() {
+                if ($('#phone_number').val() === '') {
+                    showToptips('手机号不能为空')
+                    return false;
+                };
+                if ($('#verification_code').val() === '') {
+                    showToptips('验证码不能为空')
+                    return false;
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
